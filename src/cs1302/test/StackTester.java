@@ -46,6 +46,53 @@ public class StackTester {
         } // if
     } // stackTest02
 
+    /** Test 3. */
+    private void stackTest03() {
+        System.out.print("03. size() == 1 after pushing 1 item: ");
+
+        Stack stack = this.newStack();
+        stack.push("a");
+
+        if (stack.size() == 1) {
+            System.out.println("PASS");
+        } else {
+            System.out.println("FAIL");
+        } // if
+    } // stackTest03
+
+    /** Test 4. */
+    private void stackTest04() {
+        System.out.print("04. size() == 3 after pushing 3 items: ");
+
+        Stack stack = this.newStack();
+        stack.push("a");
+        stack.push("b");
+        stack.push("c");
+
+        if (stack.size() == 3) {
+            System.out.println("PASS");
+        } else {
+            System.out.println("FAIL");
+        } // if
+    } // stackTest04
+
+    /** Test 5. */
+    private void stackTest05() {
+        System.out.print("05. size() == 3 after pushing 3 items: ");
+
+        Stack stack = this.newStack();
+        stack.push("a");
+        stack.push("b");
+        stack.push("c");
+        stack.push("d");
+
+        if (stack.size() == 4) {
+            System.out.println("PASS");
+        } else {
+            System.out.println("FAIL");
+        } // if
+    } // stackTest05
+
     /**
      * Run tests for uses cases that each start with a new
      * {@link Stack} object returned by {@link #newStack()}.
@@ -53,6 +100,9 @@ public class StackTester {
     public void testAll() {
         stackTest01();
         stackTest02();
+        stackTest03();
+        stackTest04();
+        stackTest05();
     } // test
 
     public static void main(String[] args) {
