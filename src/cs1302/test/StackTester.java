@@ -288,6 +288,56 @@ public class StackTester {
         } // if
     } // stackTest17
 
+    /** Test 18. */
+    private void stackTest18() {
+        System.out.print("18. pop() with empty stack throws expected exception: ");
+        Stack stack = this.newStack();
+        try {
+            stack.pop();
+            System.out.println("FAIL");
+        } catch (RuntimeException re) {
+            System.out.println("PASS");
+        } catch (Exception e) {
+            System.out.println("FAIL -- an unexpected exception was thrown");
+            e.printStackTrace();
+        } // try
+    } // stackTest18;
+
+    /** Test 19. */
+    private void stackTest19() {
+        System.out.print("19. peek() with empty stack throws expected exception: ");
+        Stack stack = this.newStack();
+        try {
+            stack.peek();
+            System.out.println("FAIL");
+        } catch (RuntimeException re) {
+            System.out.println("PASS");
+        } catch (Exception e) {
+            System.out.println("FAIL -- an unexpected exception was thrown");
+            e.printStackTrace();
+        } // try
+    } // stackTest19
+
+    /** Test 20. */
+    private void stackTest20() {
+        System.out.print("20. 100,000 push and 100,000 pop - should not throw exception: ");
+        Stack stack = this.newStack();
+        try {
+            // Push 100,000 elements
+            for (int i = 0; i < 100_000; i++) {
+                stack.push("" + i);
+            } // for
+            // Pop and disregard 100,000 elements
+            for (int i = 0; i < 100_000; i++) {
+                stack.pop();
+            } // for
+            System.out.println("PASS");
+        } catch (Exception e) {
+            System.out.println("FAIL");
+            e.printStackTrace();
+        } // try
+    } // stackTest20
+
     /**
      * Run tests for uses cases that each start with a new
      * {@link Stack} object returned by {@link #newStack()}.
@@ -310,6 +360,9 @@ public class StackTester {
         stackTest15();
         stackTest16();
         stackTest17();
+        stackTest18();
+        stackTest19();
+        stackTest20();
     } // test
 
     public static void main(String[] args) {
