@@ -93,6 +93,51 @@ public class StackTester {
         } // if
     } // stackTest05
 
+    /** Test 6. */
+    private void stackTest06() {
+        System.out.print("06. peek() is the last item pushed after 1 push: ");
+
+        Stack stack = this.newStack();
+        stack.push("a");
+
+        if (stack.peek().equals("a")) {
+            System.out.println("PASS");
+        } else {
+            System.out.println("FAIL");
+        } // if
+    } // test6
+
+    /** Test 7. */
+    private void stackTest07() {
+        System.out.print("07. peek() is the last item pushed after 2 pushes: ");
+
+        Stack stack = this.newStack();
+        stack.push("a");
+        stack.push("b");
+
+        if (stack.peek().equals("b")) {
+            System.out.println("PASS");
+        } else {
+            System.out.println("FAIL");
+        } // if
+    } // stackTest07
+
+    /** Test 8. */
+    private void stackTest08() {
+        System.out.print("8. peek() is the last item pushed after 3 pushes: ");
+
+        Stack stack = this.newStack();
+        stack.push("a");
+        stack.push("b");
+        stack.push("c");
+
+        if (stack.peek().equals("c")) {
+            System.out.println("PASS");
+        } else {
+            System.out.println("FAIL");
+        } // if
+    } // stackTest08
+
     /**
      * Run tests for uses cases that each start with a new
      * {@link Stack} object returned by {@link #newStack()}.
@@ -103,6 +148,9 @@ public class StackTester {
         stackTest03();
         stackTest04();
         stackTest05();
+        stackTest06();
+        stackTest07();
+        stackTest08();
     } // test
 
     public static void main(String[] args) {
